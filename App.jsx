@@ -1,7 +1,8 @@
 import React from 'react';
-import WalletConnect from './components/WalletConnect.jsx';
-import DatasetUpload from './components/DatasetUpload.jsx';
-import DatasetCreator from './components/DatasetCreator.jsx';
+import WalletConnect from './components/WalletConnect';
+import DatasetUpload from './components/DatasetUpload';
+import DatasetCreator from './components/DatasetCreator';
+
 
 function App() {
   const handleDatasetReady = ({ title, description, hash }) => {
