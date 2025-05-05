@@ -1,6 +1,5 @@
 import React from 'react';
-import DatasetUpload from './components/DatasetUpload';
-
+import DatasetUpload from './src/components/DatasetUpload';
 function App() {
   return (
     <div>
