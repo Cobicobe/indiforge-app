@@ -8,15 +8,28 @@ function DatasetUpload() {
     const file = e.target.files[0];
     if (file) {
       setFileName(file.name);
-      setLicenseMsg(`License generated for dataset: ${file.name}`);
+      setLicenseMsg('');
+    }
+  };
+
+  const handleGenerateLicense = () => {
+    if (!fileName) {
+      setLicenseMsg('Please upload a dataset first.');
+    } else {
+      setLicenseMsg(`✅ License generated for dataset: ${fileName}`);
     }
   };
 
   return (
     <div style={{ marginTop: '30px' }}>
       <input type="file" onChange={handleFileChange} />
-      {fileName && <p>Uploaded: {fileName}</p>}
-      {licenseMsg && <p>{licenseMsg}</p>}
+      {fileName && <p>📁 Uploaded: <strong>{fileName}</strong></p>}
+
+      <button onClick={handleGenerateLicense} style={{ marginTop: '10px' }}>
+        Generate License
+      </button>
+
+      {licenseMsg && <p style={{ marginTop: '10px' }}>{licenseMsg}</p>}
     </div>
   );
 }
